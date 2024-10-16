@@ -1,0 +1,32 @@
+grafana:
+  grafana.ini:
+    server:
+      root_url: https://...
+    auth:
+      disable_login_form: true
+      oauth_auto_login: false
+    auth.generic_oauth:
+      name: OAuth
+      enabled: true
+      client_id: AuthorizationClient
+      scopes: openid email profile roles
+      auth_url: https://...
+      token_url: https://...
+      allow_sign_up: true
+      disable_login_form: true
+      allowed_domains: 
+      allow_sign_up: true
+      tls_skip_verify_insecure: true
+      tls_client_cert:
+      tls_client_key:
+      tls_client_ca:
+      use_pkce: false
+      role_attribute_path: resource_access.AuthorizationClient.roles[0]
+      email_attribute_path: email
+    smtp:
+      enabled: true
+      host: smtp-central.internal...:25
+      user:
+      pass: 
+      from_address: tar@...com
+      skip_verify: true

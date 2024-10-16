@@ -1,0 +1,28 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  annotations:
+    ericsson.com/product-name: Tar Grafana
+    ericsson.com/product-number: CXD 101 000
+    ericsson.com/product-revision: 0.0.1
+    kubernetes.io/ingress.class: oam-bam
+  creationTimestamp: "2024-05-31T13:26:43Z"
+  generation: 2
+  labels:
+    app: tar-grafana
+    app.kubernetes.io/instance: kube-prom-stack
+    app.kubernetes.io/name: grafana
+    app.kubernetes.io/version: 0.0.1
+  name: tar-grafana-routes
+  namespace: tar-grafana
+  resourceVersion: "323810197"
+  uid: a80c8f9b-fafe-4746-992e-a0280bd2a80f
+spec:
+  routes:
+  - conditions:
+    - prefix: /
+    enableWebsockets: true
+    services:
+    - name: kube-prom-stack-grafana
+      port: 80
+
